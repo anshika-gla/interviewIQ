@@ -17,8 +17,8 @@ import {
   CartesianGrid,
   Tooltip,
 } from "recharts";
-import { jsPDF } from "jsPDF";
-import autoTable from 'jspdf-autoTable'
+import {jsPDF} from "jspdf"
+import autoTable from 'jspdf-autotable'
 
 function Step3Report({report}){
     if(!report){
