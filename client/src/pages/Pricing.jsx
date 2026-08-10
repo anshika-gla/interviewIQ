@@ -6,13 +6,13 @@ import { FaCheckCircle } from "react-icons/fa";
 import axios from "axios";
 import { ServerUrl } from "../App";
 import {useDispatch} from 'react-redux'
-
+import { setUserData } from "../redux/userSlice";
 
 function Pricing() {
   const navigate = useNavigate()
   const [selectedPlan,setSelectedPlan]=useState("free");
   const [loadingPlan,setLoadingPlan]=useState(null);
-  const dispatch=useDispatch
+  const dispatch=useDispatch()
 
   const plans = [
   {
