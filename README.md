@@ -8,10 +8,10 @@ It also includes **Razorpay payment integration** for premium features and is de
 
 ---
 🌐 Live Demo
+
 📊 Dashboard
 https://interviewiq-1client-ewxy.onrender.com
-🔗 Backend API
-https://ola-ride-booking-sql-analysis-production.up.railway.app
+
 
 ## 🚀 Features
 
