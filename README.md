@@ -10,7 +10,7 @@ It also includes **Razorpay payment integration** for premium features and is de
 🌐 Live Demo
 
 📊 Dashboard
-https://interviewiq-1client-ewxy.onrender.com
+https://interviewiq-1client-ewxy.onrender.com/
 
 
 ## 🚀 Features
