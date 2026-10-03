@@ -1,193 +1,145 @@
-InterviewIQ — AI Interview Preparation Platform
-Practice smarter. Interview better.
-InterviewIQ is a full-stack AI-powered interview preparation platform that turns a candidate's resume, target role, skills, and experience into a personalized mock interview. It generates interview questions, evaluates answers, and provides performance insights so candidates can identify areas for improvement.
+# 🤖 AI Interview Agent
 
-Live Demo
-Launch InterviewIQ
-Repository: https://github.com/anshika-gla/interviewIQ
-Features
-- Resume Upload & Analysis
-- Upload a PDF resume.
-- Extract resume text from all pages.
-- Use AI to identify role, experience, projects, and skills.
-- AI-Powered Interview Generation
-- Generate personalized interview questions using the candidate's resume and selected role.
-- Questions progress from easy to medium to hard.
-- Supports resume-, project-, and skill-based questioning.
-- Interactive Mock Interview
-- Answer generated questions one by one.
-- Individual questions have configurable time limits.
-- Supports follow-up evaluation through the interview workflow.
-- AI Answer Evaluation
-- Evaluates answers on:
-  - Confidence
-  - Communication
-  - Correctness
-- Generates a final score and concise feedback for each response.
-- Interview Performance Report
-- Overall interview score
-- Confidence score
-- Communication score
-- Correctness score
-- Question-wise scores and feedback
-- Previous interview history
-- Authentication
-- Google-based authentication flow.
-- HTTP-only cookie-based token session.
-- Protected interview and payment routes.
-- Razorpay Payment Integration
-- Create payment orders.
-- Verify Razorpay signatures.
-- Add purchased interview credits to the user's account.
-- Cloud Deployment
-- Frontend deployed on Render.
-- MongoDB Atlas used for cloud database storage.
-How InterviewIQ Works
-                    ┌──────────────────────┐
-                    │      User Login      │
-                    │   Google Auth Flow   │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │    Upload Resume     │
-                    │       PDF File       │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   PDF Text Parsing   │
-                    │      pdfjs-dist      │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │      AI Analysis     │
-                    │      OpenRouter      │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Generate Interview   │
-                    │     Questions        │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │   Candidate Answers  │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │    AI Evaluation     │
-                    │ Confidence / Comm.   │
-                    │      / Correctness   │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │ Performance Report   │
-                    │    & Interview Data  │
-                    └──────────────────────┘
-Architecture
-InterviewIQ follows a client-server architecture:
-┌───────────────────────────────────────────────┐
-│                 React Client                  │
-│                                               │
-│  Authentication │ Interview UI │ Dashboard   │
-│  Resume Upload  │ Questions    │ Reports     │
-└───────────────────────┬───────────────────────┘
-                        │
-                  REST API / Axios
-                        │
-                        ▼
-┌───────────────────────────────────────────────┐
-│              Node.js + Express Server         │
-│                                               │
-│ Auth │ User │ Interview │ Payment Controllers│
-│ Middleware │ PDF Processing │ AI Service      │
-└───────────────┬───────────────┬───────────────┘
-                │               │
-                ▼               ▼
-       ┌──────────────┐  ┌──────────────────┐
-       │ MongoDB      │  │ OpenRouter AI    │
-       │ / Atlas      │  │ GPT-4o-mini      │
-       └──────────────┘  └──────────────────┘
-                │
-                ▼
-       ┌──────────────────┐
-       │ Razorpay Payment │
-       └──────────────────┘
-Tech Stack
-Frontend
+An AI-powered interview preparation platform built with the **MERN Stack** that helps users practice technical and HR interviews through an intelligent AI interviewer.
+
+The platform allows users to upload their resume, generate personalized interview questions, interact with an AI interviewer, and analyze their interview performance.
+
+It also includes **Razorpay payment integration** for premium features and is designed for production deployment.
+
+📊 Dashboard
+https://interviewiq-1client-ewxy.onrender.com/
+
+## 🚀 Features
+
+### 👤 User Authentication
+- User registration and login
+- Secure authentication
+- User-specific interview sessions
+- Protected routes
+
+### 📄 Resume Upload
+- Upload your resume
+- Resume-based interview preparation
+- Extract relevant information from the resume
+- Generate personalized interview questions
+
+### 🤖 AI Interview Agent
+- AI-powered interview simulation
+- Technical interview questions
+- HR/behavioral questions
+- Follow-up questions
+- Interactive interview experience
+- Real-time conversation with the AI interviewer
+
+### 📊 Interview Analysis
+- Interview performance evaluation
+- AI-generated feedback
+- Strengths and weaknesses
+- Suggestions for improvement
+- Interview performance summary
+
+### 💳 Razorpay Integration
+- Premium plan/payment integration
+- Secure Razorpay checkout
+- Payment verification
+- Unlock premium interview features
+
+### 📱 Responsive UI
+- Modern user interface
+- Responsive design
+- Works across desktop, tablet, and mobile devices
+
+### ☁️ Deployment
+- Production-ready MERN architecture
+- Frontend and backend can be deployed separately
+- Environment-variable based configuration
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
 - React.js
 - JavaScript
 - HTML5
 - CSS3
-- Tailwind CSS
 - React Router
-- Redux Toolkit
 - Axios
-- Recharts
-- React Icons
-- Vite
-- Firebase
-Backend
+
+### Backend
+
 - Node.js
 - Express.js
-- REST APIs
-- Axios
-- CORS
-- Cookie Parser
-- dotenv
-- JSON Web Token
-- Multer
-Database
+- REST API
+- JWT Authentication
+
+### Database
+
 - MongoDB
-- MongoDB Atlas
 - Mongoose
-AI & Resume Processing
-- OpenRouter API
-- OpenAI GPT-4o-mini through OpenRouter
-- PDF.js (pdfjs-dist)
-- AI-based resume extraction
-- AI question generation
-- AI answer evaluation
-- Personalized feedback
-Payments
+
+### AI
+
+- AI / LLM API
+- Prompt-based interview generation
+- AI-powered interview evaluation
+
+### Payment
+
 - Razorpay
-- Payment order creation
-- HMAC-SHA256 signature verification
-Development & Deployment
+
+### Tools
+
 - Git
 - GitHub
-- VS Code
 - Postman
+- VS Code
 - npm
-- Vite
-- Render
-- MongoDB Atlas
-Project Structure
-interviewIQ/
-│
-├── client/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── redux/
-│   │   ├── assets/
-│   │   └── ...
-│   ├── package.json
-│   └── vite.config.js
-│
-├── server/
-│   ├── config/
-│   ├── controllers/
-│   ├── middlewares/
-│   ├── models/
-│   ├── routes/
-│   ├── services/
-│   ├── index.js
-│   └── package.json
-│
-└── README.md
+
+---
+
+## 🏗️ System Architecture
+
+```text
+                    ┌──────────────────────┐
+                    │       User           │
+                    └──────────┬───────────┘
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   React Frontend     │
+                    │                      │
+                    │ • Authentication    │
+                    │ • Resume Upload      │
+                    │ • Interview UI       │
+                    │ • Results Dashboard  │
+                    └──────────┬───────────┘
+                               │
+                         REST API / Axios
+                               │
+                               ▼
+                    ┌──────────────────────┐
+                    │   Express / Node.js  │
+                    │      Backend         │
+                    │                      │
+                    │ • Auth APIs          │
+                    │ • Resume APIs        │
+                    │ • Interview APIs     │
+                    │ • Payment APIs       │
+                    └───────┬───────┬──────┘
+                            │       │
+                  ┌─────────┘       └──────────┐
+                  ▼                            ▼
+          ┌───────────────┐            ┌──────────────┐
+          │    MongoDB    │            │   AI / LLM   │
+          │   Database    │            │     API      │
+          └───────────────┘            └──────────────┘
+                                             │
+                                             ▼
+                                    AI Interview Feedback
+
+                            ┌──────────────────┐
+                            │     Razorpay     │
+                            │     Payments     │
+                            └──────────────────┘
